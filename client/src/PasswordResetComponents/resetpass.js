@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useHistory } from 'react-router-dom';
 import { useToast } from "@chakra-ui/react";
 
 function ResetPassword() {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const toast = useToast();
+  const history = useHistory();
 
   const handleResetPassword = (event) => {
     event.preventDefault();
@@ -33,6 +35,8 @@ function ResetPassword() {
           duration: 5000,
           isClosable: true,
         });
+        // Redirect to home page after successful password reset
+        history.push("/");
       })
       .catch((error) => {
         toast({
