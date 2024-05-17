@@ -1,18 +1,31 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useToast } from "@chakra-ui/react";
 
 function ForgotPassword() {
   const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
+  const toast = useToast();
 
   const handleResetRequest = (event) => {
     event.preventDefault();
     axios.post("https://evoscape-server-a8ey.onrender.com/forgot-password", { email })
       .then((response) => {
-        setMessage(response.data.message);
+        toast({
+          title: "Success",
+          description: response.data.message,
+          status: "success",
+          duration: 5000,
+          isClosable: true,
+        });
       })
       .catch((error) => {
-        setMessage(error.response.data.message);
+        toast({
+          title: "Error",
+          description: error.response.data.message,
+          status: "error",
+          duration: 5000,
+          isClosable: true,
+        });
       });
   };
 
@@ -36,7 +49,6 @@ function ForgotPassword() {
             Reset Password
           </button>
         </form>
-        {message && <p style={{ color: 'red', marginTop: '10px' }}>{message}</p>}
       </div>
     </div>
   );
