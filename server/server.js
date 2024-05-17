@@ -47,6 +47,10 @@ app.use('/', googleAuthRoutes);
 app.use('/', profileRoutes);
 app.use('/', chatRoutes);
 
+app.get("/", (req,res)=>{
+  res.send("Hello Everyone");
+});
+
 
 app.post("/add_product", auth, async (req, res) => {
   try {
