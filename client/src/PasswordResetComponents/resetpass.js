@@ -1,22 +1,47 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useToast } from "@chakra-ui/react";
 
 function ResetPassword() {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-  const [message, setMessage] = useState('');
+  const toast = useToast();
 
   const handleResetPassword = (event) => {
     event.preventDefault();
     const params = new URLSearchParams(window.location.search);
     const token = params.get('token');
     const email = params.get('email');
+
+    if (password !== confirmPassword) {
+      toast({
+        title: "Error",
+        description: "Passwords do not match.",
+        status: "error",
+        duration: 5000,
+        isClosable: true,
+      });
+      return;
+    }
+
     axios.post("https://evoscape-server-a8ey.onrender.com/reset-password", { email, token, newPassword: password })
       .then((response) => {
-        setMessage(response.data.message);
+        toast({
+          title: "Success",
+          description: response.data.message,
+          status: "success",
+          duration: 5000,
+          isClosable: true,
+        });
       })
       .catch((error) => {
-        setMessage(error.response.data.message);
+        toast({
+          title: "Error",
+          description: error.response.data.message,
+          status: "error",
+          duration: 5000,
+          isClosable: true,
+        });
       });
   };
 
@@ -48,7 +73,6 @@ function ResetPassword() {
             Reset Password
           </button>
         </form>
-        {message && <p style={{ marginTop: '15px', textAlign: 'center', color: '#333', fontSize: '16px' }}>{message}</p>}
       </div>
     </div>
   );
