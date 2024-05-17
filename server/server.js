@@ -48,7 +48,7 @@ app.use('/', profileRoutes);
 app.use('/', chatRoutes);
 
 app.get("/", (req,res)=>{
-  res.send("Hello Everyone");
+  res.send("Hola Amigo");
 });
 
 
