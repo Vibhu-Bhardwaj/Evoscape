@@ -227,7 +227,7 @@ function sendPasswordResetEmail(email, token) {
     subject: 'Password Reset',
     html: `<p>You are receiving this email because you (or someone else) have requested the reset of the password for your account.</p>
            <p>Please click on the following link to reset your password:</p>
-           <p><a href="https://evoscape.vercel.app/reset-password?token=${token}&email=${email}">Reset Password Link</a></p>
+           <p><a href="https://evoscape.onrender.com/reset-password?token=${token}&email=${email}">Reset Password Link</a></p>
            <p>If you did not request this, please ignore this email and your password will remain unchanged.</p>`
   };
 
