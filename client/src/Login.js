@@ -7,7 +7,7 @@ import {
   MDBTabsContent,
   MDBTabsPane,
   MDBBtn,
-  MDBInput,
+  MDBInput, 
   MDBCheckbox
 }
 from 'mdb-react-ui-kit';
@@ -104,7 +104,7 @@ function Login() {
 
         <MDBTabsPane show={justifyActive === 'tab1'}>
 
-          {/* <div className="text-center mb-3">
+          <div className="text-center mb-3">
             <p>Sign in with:</p>
 
             <div>
@@ -112,7 +112,7 @@ function Login() {
             </div>
 
             <p className="text-center mt-3">or:</p>
-          </div> */}
+          </div>
           <form onSubmit={login}>
           <div className="mb-4">
                 <MDBInput label='Your Email' id='email' type='email' required/>
@@ -137,7 +137,7 @@ function Login() {
 
         <MDBTabsPane show={justifyActive === 'tab2'}>
 
-          {/* <div className="text-center mb-3">
+          <div className="text-center mb-3">
             <p>Sign up with:</p>
 
             <div>
@@ -145,7 +145,7 @@ function Login() {
             </div>
 
             <p className="text-center mt-3">or:</p>
-          </div> */}
+          </div>
           {registered === false &&
           <form onSubmit={register}>
           <MDBInput wrapperClass='mb-4' label='Name' id='name' type='text' required/>

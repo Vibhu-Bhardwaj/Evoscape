@@ -5,7 +5,7 @@ import axios from 'axios';
 function GoogleSignIn() {
  
  const responseMessage = (response) => {
-    // console.log(response);
+    // console.log(response);  
    axios.post('https://evoscape-server-a8ey.onrender.com/google-auth', {
      credential: response.credential,
    })
