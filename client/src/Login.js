@@ -1,15 +1,5 @@
 import React, { useState } from 'react';
-import {
-  MDBContainer,
-  MDBTabs,
-  MDBTabsItem,
-  MDBTabsLink,
-  MDBTabsContent,
-  MDBTabsPane,
-  MDBBtn,
-  MDBInput, 
-  MDBCheckbox
-}
+import {MDBContainer,MDBTabs,MDBTabsItem,MDBTabsLink,MDBTabsContent,MDBTabsPane,MDBBtn,MDBInput, MDBCheckbox}
 from 'mdb-react-ui-kit';
 import { Alert, Badge } from 'react-bootstrap';
 import axios from 'axios';
