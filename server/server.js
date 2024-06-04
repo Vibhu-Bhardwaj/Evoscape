@@ -11,7 +11,6 @@ const googleAuthRoutes = require('./authRoutes/googleAuthRoutes');
 const chatRoutes = require('./chatRoutes/chatRoutes');
 const profileRoutes = require('./profileRoutes/profileRoutes');
 const Message = require('./models/Message');
-
 const nodemailer = require("nodemailer");
 const User = require('./models/User');
 const bcrypt = require('bcrypt');
