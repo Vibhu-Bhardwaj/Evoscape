@@ -29,15 +29,12 @@ cloudinary.config({
 app.use(cors());
 app.use(bodyParser.json());
 
-mongoose
-  .connect(process.env.MONGODB_URI, {
+mongoose.connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-  })
-  .then(() => {
+  }).then(() => {
     console.log("Connected to database!");
-  })
-  .catch((error) => {
+  }).catch((error) => {
     console.log("Connection failed!");
     console.log(error);
   });

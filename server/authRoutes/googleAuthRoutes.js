@@ -14,11 +14,9 @@ app.post("/google-auth", (req, res) => {
 
   const id_token = req.body.credential;
   // Verify the Google ID token
-  client
-    .verifyIdToken({
+  client.verifyIdToken({
       idToken: id_token,
-    })
-    .then((ticket) => {
+    }).then((ticket) => {
       const { email } = ticket.getPayload();
       const { name } = ticket.getPayload();
       const { email_verified } = ticket.getPayload();
