@@ -45,7 +45,7 @@ app.use('/', profileRoutes);
 app.use('/', chatRoutes);
 
 app.get("/", (req,res)=>{
-  res.send("Hi from Vibhu");
+  res.send("Hi from me");
 });
 
 
