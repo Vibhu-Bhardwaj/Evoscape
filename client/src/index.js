@@ -17,8 +17,6 @@ const theme = extendTheme({
   },
 });
 
-console.log("Google Client ID:", process.env.REACT_APP_GOOGLE_CLIENT_ID);
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <ChakraProvider theme={theme}>
