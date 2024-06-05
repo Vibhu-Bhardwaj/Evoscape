@@ -3,9 +3,7 @@ const jwt = require('jsonwebtoken');
 const User = require('../models/User'); // Import the User model here
 const { OAuth2Client } = require('google-auth-library');
 const app = express();
-require('dotenv').config();
-const cors = require("cors");
-app.use(cors());
+
 
 const client = new OAuth2Client({
   clientId: process.env.GOOGLE_CLIENT_ID,
