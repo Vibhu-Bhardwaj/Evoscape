@@ -17,10 +17,12 @@ const theme = extendTheme({
   },
 });
 
+console.log("Google Client ID:", process.env.REACT_APP_GOOGLE_CLIENT_ID);
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <ChakraProvider theme={theme}>
-  <GoogleOAuthProvider clientId="792060318576-1mqeijfldhmbfck89vprnv7p1vm6tv6r.apps.googleusercontent.com">
+  <GoogleOAuthProvider  clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}>
   <React.StrictMode>
     <App />
   </React.StrictMode>
