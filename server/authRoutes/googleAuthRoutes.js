@@ -22,7 +22,7 @@ app.post("/google-auth", (req, res) => {
       const { email_verified } = ticket.getPayload();
       const { picture } = ticket.getPayload();
 
-      // console.log(ticket); 
+      console.log(ticket); 
 
       // Check if the email is already registered in your system
       User.findOne({ email })
