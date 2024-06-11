@@ -16,7 +16,6 @@ const User = require('./models/User');
 const bcrypt = require('bcrypt');
 const crypto = require("crypto");
 
-
 const cloudinary = require('cloudinary').v2;
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
