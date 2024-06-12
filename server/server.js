@@ -68,7 +68,6 @@ app.post("/add_product", auth, async (req, res) => {
     }
     // Save the product document
     await product.save();
-
     console.log("The product has been saved successfully.");
     res.status(200).send("The product has been saved successfully.");
   } catch (err) {
