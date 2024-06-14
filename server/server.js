@@ -66,7 +66,6 @@ app.post("/add_product", auth, async (req, res) => {
       const fieldName = `productpic${i + 1}`;
       product[fieldName] = req.body.uploadedFiles[i];
     }
-    
     // Save the product document
     await product.save();
     console.log("The product has been saved successfully.");
