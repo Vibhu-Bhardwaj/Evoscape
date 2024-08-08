@@ -23,7 +23,6 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
-
 app.use(cors());
 app.use(bodyParser.json());
 
